@@ -40,7 +40,7 @@ case $dist in
     ;;
 esac
 
-function ss_debian() {
+ss_debian() {
   debver=`cat /etc/debain_version | cut -d '.' -f 1`
   case $debver in
     '8')
@@ -60,14 +60,14 @@ function ss_debian() {
   esac
 }
 
-function ss_ubuntu() {
+ss_ubuntu() {
   apt-get install software-properties-common -y
   add-apt-repository ppa:max-c-lv/shadowsocks-libev -y
   apt-get update
   apt install shadowsocks-libev
 }
 
-function ss_fedora() {
+ss_fedora() {
   hash dnf > /dev/null 2>&1
   if [ $? == 0 ]; then
     dnf copr enable librehat/shadowsocks
