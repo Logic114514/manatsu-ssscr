@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/bin/sh
 # 反正也没人用，测试那么多平台干嘛，写错了就写错了，不支持就不支持。
 
 echo '    1) Arch Linux'
@@ -12,7 +12,7 @@ read -p 'Select your distribution: ' dist
 
 # Install shadowsocks-libev
 ss_debian() {
-  debver=`cat /etc/debain_version | cut -d '.' -f 1`
+  debver=`cat /etc/debian_version | cut -d '.' -f 1`
   case $debver in
     '8')
       sh -c 'printf "deb http://deb.debian.org/debian jessie-backports main\n" > /etc/apt/sources.list.d/jessie-backports.list'
@@ -65,6 +65,8 @@ case $dist in
     pacman -S shadowsocks-libev
     ;;
   '2')
+    # Other distros are untested
+    apt-get install curl
     ss_debian
     ;;
   '3')
