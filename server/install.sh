@@ -1,14 +1,14 @@
-#!/bin/sh
+#!/bin/env bash
 # 反正也没人用，测试那么多平台干嘛，写错了就写错了，不支持就不支持。
 
-echo '\t1) Arch Linux'
-echo '\t2) Debian'
-echo '\t3) Ubuntu'
-echo '\t4) Fedora'
-echo '\t5) RHEL or CentOS'
-echo '\t6) Other Linux'
-echo '\t7) OS X'
-read -p 'Select your distribution:' dist
+echo '    1) Arch Linux'
+echo '    2) Debian'
+echo '    3) Ubuntu'
+echo '    4) Fedora'
+echo '    5) RHEL or CentOS'
+echo '    6) Other Linux'
+echo '    7) OS X'
+read -p 'Select your distribution: ' dist
 
 # Install shadowsocks-libev
 case $dist in
@@ -206,12 +206,12 @@ ciphers[2]='aes-256-cfb'
 ciphers[3]='chacha20-ietf-poly-1305'
 ciphers[4]='xchacha20-ietf-poly-1305'
 
-echo '\t1) aes-256-gcm'
-echo '\t2) aes-256-cfb'
-echo '\t3) chacha20-ietf-poly-1305'
-echo '\t4) xchacha20-ietf-poly-1305'
-read -p 'Select your shadowsocks ciphers:\n\t1) aes-256-gcm\n\t)2 aes-256-cfb\n\t' cipher
-read -p 'Enter your password:' pwd
+echo '    1) aes-256-gcm'
+echo '    2) aes-256-cfb'
+echo '    3) chacha20-ietf-poly-1305'
+echo '    4) xchacha20-ietf-poly-1305'
+read -p 'Select your shadowsocks ciphers: ' cipher
+read -p 'Enter your password: ' pwd
 
 sed -i "s/-k \"\"/-k \"${pwd}\"/g" server.conf
 sed -i "s/\"password\": \"\"/\"password\": \"${pwd}\"/g" config.json
