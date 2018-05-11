@@ -1,0 +1,9 @@
+{
+    "server": "localhost",
+    "server_port": 11451,
+    "password": "",
+    "timeout": 300,
+    "method": "",
+    "fast_open": false,
+    "workers": 1
+}

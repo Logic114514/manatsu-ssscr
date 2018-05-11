@@ -1,0 +1,19 @@
+{
+  "listen": ":10810",
+  "target": "localhost:11451",
+  "crypt": "none",
+  "mode": "manual",
+  "mtu": 1200,
+  "sndwnd": 4096,
+  "rcvwnd": 4096,
+  "datashard": 70,
+  "parityshard": 30,
+  "nodelay": 1,
+  "resend": 2,
+  "nc": 1,
+  "interval": 20,
+  "dscp": 46,
+  "nocomp": true,
+  "sockbuf": 4194304,
+  "keepalive": 10
+}

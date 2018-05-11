@@ -1,0 +1,10 @@
+[Unit]
+Description=udp2raw
+
+[Service]
+Type=simple
+PIDFile=/run/udp2raw.pid
+ExecStart=/usr/bin/udp2raw --conf-file /etc/udp2raw/server.conf
+
+[Install]
+WantedBy=multi-user.target

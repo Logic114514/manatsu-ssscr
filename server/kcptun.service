@@ -1,0 +1,10 @@
+[Unit]
+Description=kcptun
+
+[Service]
+Type=simple
+PIDFile=/run/kcptun.pid
+ExecStart=/usr/bin/kcptun_server -c /etc/kcptun/server-config.json --log /var/log/kcptun.log
+
+[Install]
+WantedBy=multi-user.target
