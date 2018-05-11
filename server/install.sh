@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 # 反正也没人用，测试那么多平台干嘛，写错了就写错了，不支持就不支持。
 
 echo '    1) Arch Linux'
@@ -201,13 +201,11 @@ cp udp2raw.service /lib/systemd/system
 
 
 # Configurations
-ciphers=(
-  '',
-  'aes-256-gcm',
-  'aes-256-cfb',
-  'chacha20-ietf-poly-1305',
-  'xchacha20-ietf-poly-1305'
-)
+ciphers[0]=''
+ciphers[1]='aes-256-gcm'
+ciphers[2]='aes-256-cfb'
+ciphers[3]='chacha20-ietf-poly-1305'
+ciphers[4]='xchacha20-ietf-poly-1305'
 
 echo '    1) aes-256-gcm'
 echo '    2) aes-256-cfb'
