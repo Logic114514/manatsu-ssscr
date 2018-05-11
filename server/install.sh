@@ -1,4 +1,4 @@
-#!/bin/env bash
+#!/usr/bin/env bash
 # 反正也没人用，测试那么多平台干嘛，写错了就写错了，不支持就不支持。
 
 echo '    1) Arch Linux'
