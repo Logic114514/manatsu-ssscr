@@ -11,35 +11,6 @@ echo '    7) OS X'
 read -p 'Select your distribution: ' dist
 
 # Install shadowsocks-libev
-case $dist in
-  '1')
-    pacman -S shadowsocks-libev
-    ;;
-  '2')
-    ss_debian
-    ;;
-  '3')
-    ss_ubuntu
-    ;;
-  '4')
-    ss_fedora
-    ;;
-  '5')
-    ss_fedora
-    ;;
-  '6')
-    echo 'Upcoming!'
-    exit 1
-    ;;
-  '7')
-    brew install shadowsocks-libev
-    ;;
-  *)
-    echo 'Not a correct distnumber!'
-    exit 1
-    ;;
-esac
-
 ss_debian() {
   debver=`cat /etc/debain_version | cut -d '.' -f 1`
   case $debver in
@@ -89,6 +60,34 @@ ss_fedora() {
   fi
 }
 
+case $dist in
+  '1')
+    pacman -S shadowsocks-libev
+    ;;
+  '2')
+    ss_debian
+    ;;
+  '3')
+    ss_ubuntu
+    ;;
+  '4')
+    ss_fedora
+    ;;
+  '5')
+    ss_fedora
+    ;;
+  '6')
+    echo 'Upcoming!'
+    exit 1
+    ;;
+  '7')
+    brew install shadowsocks-libev
+    ;;
+  *)
+    echo 'Not a correct distnumber!'
+    exit 1
+    ;;
+esac
 
 # Install kcptun
 ikrnl=`uname -s`
